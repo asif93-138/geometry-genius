@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geometry Genius</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+<style>
+
+</style>
+
+</head>
+
+<body>
+
+<header class="container-lg bg-info-subtle d-flex justify-content-between px-4 my-4">
+
+<section>
+<h2>Interactive</h2>
+<p>Geometry Genius</p>
+</section>
+
+<a href="blog.html"><button type="button" class="btn btn-primary mt-4">Blog</button></a>
+
+</header>
+
+<main class="d-flex justify-content-between container-lg">
+
+<section class="w-75 row">
+
+<article class="container border col-4 p-2">
+<img src="images/triangle.png" class="img-fluid">
+<h4>Triangle</h4>
+<p>Area(A) = 0.5 X b X h</p>
+<p><input type="number" id="t-base" placeholder="b"> cm <input type="number" id="t-height" placeholder="h"> cm</p>
+<button type="button" class="btn btn-primary" id="triangle">Calculate</button>
+</article>
+
+<article class="container border col-4 p-2">
+<img src="images/rectangle.png" class="img-fluid">
+<h4>Rectangle</h4>
+<p>Area(A) = w X l</p>
+<p><input type="" id="r-width" placeholder="w"> cm <input type="" id="r-length" placeholder="l"> cm</p>
+<button type="button" class="btn btn-primary" id="rectangle">Calculate</button>
+</article>
+
+<article class="container border col-4 p-2">
+<img src="images/parallelogram.png" class="img-fluid">
+<h4>Parallelogram</h4>
+<p>Area(A) = b X h</p>
+<p>b = 10 cm, h = 12  cm</p>
+<button type="button" class="btn btn-primary" id="parallelogram">Calculate</button>
+</article>
+
+<article class="container border col-4 p-2">
+<img src="images/rhombus.png" class="img-fluid">
+<h4>Rhombus</h4>
+<p>Area(A) = 0.5 X d<sub>1</sub> X d<sub>2</sub></p>
+<p>d<sub>1</sub> = 16 cm, d<sub>2</sub> = 8 cm</p>
+<button type="button" class="btn btn-primary" id="rhombus">Calculate</button>
+</article>
+
+<article class="container border col-4 p-2">
+<img src="images/pentagon.png" class="img-fluid">
+<h4>Pentagon</h4>
+<p>Area (A) = 0.5 X p X b</p>
+<p>p = 6 cm, b = 10 cm</p>
+<button type="button" class="btn btn-primary" id="pentagon">Calculate</button>
+</article>
+
+<article class="container border col-4 p-2">
+<img src="images/ellipse.png" class="img-fluid">
+<h4>Ellipse</h4>
+<p>Area(A) = &#960;ab</p>
+<p>a = 10 cm, b = 4 cm</p>
+<button type="button" class="btn btn-primary" id="ellipse">Calculate</button>
+</article>
+
+</section>
+
+<section class="w-25">
+
+<article class="border">
+<h4><u>Area Calculation</u></h4>
+<p>1. Triangle <span id="triangle-result"></span> cm<sup>2</sup><p>
+<p>2. Rectangle <span id="rectangle-result"></span> cm<sup>2</sup><p>
+<p>3. Parallelogram <span id="parallelogram-result"></span> cm<sup>2</sup><p>
+<p>4. Rhombus <span id="rhombus-result"></span> cm<sup>2</sup><p>
+<p>5. Pentagon <span id="pentagon-result"></span> cm<sup>2</sup><p>
+<p>6. Ellipse <span id="ellipse-result"></span> cm<sup>2</sup><p>
+</article>
+
+</section>
+
+</main>
+
+<script>
+
+document.getElementById("triangle").addEventListener("click", function() {document.getElementById("triangle-result").innerText = multiplicationWithHalf(parseFloat(document.getElementById("t-base").value), parseFloat(document.getElementById("t-height").value))})
+
+document.getElementById("rectangle").addEventListener("click", function() {document.getElementById("rectangle-result").innerText = multiplicationWithoutHalf(parseFloat(document.getElementById("r-width").value), parseFloat(document.getElementById("r-length").value))})
+
+document.getElementById("parallelogram").addEventListener("click", function() {document.getElementById("parallelogram-result").innerText = multiplicationWithoutHalf(10, 12)})
+
+document.getElementById("rhombus").addEventListener("click", function() {document.getElementById("rhombus-result").innerText = multiplicationWithHalf(16, 8)})
+
+document.getElementById("pentagon").addEventListener("click", function() {document.getElementById("pentagon-result").innerText = multiplicationWithHalf(6, 10)})
+
+document.getElementById("ellipse").addEventListener("click", function() {document.getElementById("ellipse-result").innerText = multiplicationWithPi(10, 4).toFixed(2)})
+
+function multiplicationWithoutHalf(x, y) {
+return x * y;
+}
+
+function multiplicationWithHalf(x, y) {
+return (x * y) / 2;
+}
+
+function multiplicationWithPi(x, y) {
+return x * y * 3.14;
+}
+
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
