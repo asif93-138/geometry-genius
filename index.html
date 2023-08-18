@@ -13,13 +13,22 @@
 
 <style>
 
+@media screen and (min-width: 950px) {
+.grid-container {
+  display: grid;
+  gap: 0px;
+  grid-template-columns: auto auto auto;
+}
+.dis {width:350px;}
+}
+
 </style>
 
 </head>
 
 <body>
 
-<header class="container-lg bg-info-subtle d-flex justify-content-between px-4 my-4">
+<header class="container bg-info-subtle d-flex justify-content-between pt-2 px-4 my-4">
 
 <section>
 <h2>Interactive</h2>
@@ -30,11 +39,11 @@
 
 </header>
 
-<main class="d-flex justify-content-between container-lg">
+<main class="container d-lg-flex">
 
-<section class="w-75 row">
+<section class="grid-container">
 
-<article class="container border col-4 p-2">
+<article class="border m-2 p-3">
 <img src="images/triangle.png" class="img-fluid">
 <h4>Triangle</h4>
 <p>Area(A) = 0.5 X b X h</p>
@@ -42,7 +51,7 @@
 <button type="button" class="btn btn-primary" id="triangle">Calculate</button>
 </article>
 
-<article class="container border col-4 p-2">
+<article class="border m-2 p-3">
 <img src="images/rectangle.png" class="img-fluid">
 <h4>Rectangle</h4>
 <p>Area(A) = w X l</p>
@@ -50,7 +59,7 @@
 <button type="button" class="btn btn-primary" id="rectangle">Calculate</button>
 </article>
 
-<article class="container border col-4 p-2">
+<article class="border m-2 p-3">
 <img src="images/parallelogram.png" class="img-fluid">
 <h4>Parallelogram</h4>
 <p>Area(A) = b X h</p>
@@ -58,7 +67,7 @@
 <button type="button" class="btn btn-primary" id="parallelogram">Calculate</button>
 </article>
 
-<article class="container border col-4 p-2">
+<article class="border m-2 p-3">
 <img src="images/rhombus.png" class="img-fluid">
 <h4>Rhombus</h4>
 <p>Area(A) = 0.5 X d<sub>1</sub> X d<sub>2</sub></p>
@@ -66,7 +75,7 @@
 <button type="button" class="btn btn-primary" id="rhombus">Calculate</button>
 </article>
 
-<article class="container border col-4 p-2">
+<article class="border m-2 p-3">
 <img src="images/pentagon.png" class="img-fluid">
 <h4>Pentagon</h4>
 <p>Area (A) = 0.5 X p X b</p>
@@ -74,7 +83,7 @@
 <button type="button" class="btn btn-primary" id="pentagon">Calculate</button>
 </article>
 
-<article class="container border col-4 p-2">
+<article class="border m-2 p-3">
 <img src="images/ellipse.png" class="img-fluid">
 <h4>Ellipse</h4>
 <p>Area(A) = &#960;ab</p>
@@ -84,16 +93,16 @@
 
 </section>
 
-<section class="w-25">
+<section class="dis mt-2">
 
-<article class="border">
+<article class="border p-3">
 <h4><u>Area Calculation</u></h4>
-<p>1. Triangle <span id="triangle-result"></span> cm<sup>2</sup><p>
-<p>2. Rectangle <span id="rectangle-result"></span> cm<sup>2</sup><p>
-<p>3. Parallelogram <span id="parallelogram-result"></span> cm<sup>2</sup><p>
-<p>4. Rhombus <span id="rhombus-result"></span> cm<sup>2</sup><p>
-<p>5. Pentagon <span id="pentagon-result"></span> cm<sup>2</sup><p>
-<p>6. Ellipse <span id="ellipse-result"></span> cm<sup>2</sup><p>
+<p>1. Triangle <span id="triangle-result">0</span> cm<sup>2</sup><p>
+<p>2. Rectangle <span id="rectangle-result">0</span> cm<sup>2</sup><p>
+<p>3. Parallelogram <span id="parallelogram-result">0</span> cm<sup>2</sup><p>
+<p>4. Rhombus <span id="rhombus-result">0</span> cm<sup>2</sup><p>
+<p>5. Pentagon <span id="pentagon-result">0</span> cm<sup>2</sup><p>
+<p>6. Ellipse <span id="ellipse-result">0</span> cm<sup>2</sup><p>
 </article>
 
 </section>
@@ -123,7 +132,7 @@ return (x * y) / 2;
 }
 
 function multiplicationWithPi(x, y) {
-return x * y * 3.14;
+return x * y * 3.1416;
 }
 
 </script>
